@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+     POSTGRES_DB: $POSTGRES_DATABASE
+     POSTGRES_USER: $POSTGRES_USER
+     POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+    ports:
+     - 80:4000
